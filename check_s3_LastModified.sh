@@ -3,9 +3,10 @@
 #set -o pipefail
 
 # Author: Doug Wilson
+# Source: https://github.com/customink/nagios-check_s3_LastModified
 
 ### CHANGELOG
-# Date: 11/10/2016
+# v0.1.1: Date: 11/10/2016
 #   Initial release
 
 # takes 3 inputs
