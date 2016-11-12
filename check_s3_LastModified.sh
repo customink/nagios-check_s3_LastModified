@@ -72,7 +72,7 @@ if [ ${obj_char_count} -lt 10 ]; then
     Does the bucket/object exist? Do we have access?"
 fi
 obj_lastmodified="$(echo ${obj} | jq '.LastModified' | tr -d '"')"
-obj_lastmodified_epoch="$(date --date=${obj_lastmodified} +%s )"
+obj_lastmodified_epoch="$(date --date="${obj_lastmodified}" +%s)"
 ##obj_lastmodified_epoch="$(date --date="$(aws s3api head-object --bucket ${BUCKET} --key ${OBJECT} | jq '.LastModified' | tr -d '"')" +%s)"
 
 if [ "${DEBUG}" = true ]; then
