@@ -46,8 +46,11 @@ fi
 
 Exit () {
     echo "$1: ${2:0}"
-    status=STATE_$1
-    exit ${!status}
+    if [[ "$1" == "OK" ]]; then status=0; fi
+    if [[ "$1" == "WARNING" ]]; then status=1; fi
+    if [[ "$1" == "CRITICAL" ]]; then status=2; fi
+    if [[ "$1" == "UNKNOWN" ]]; then status=3; fi
+    exit $status
 }
 
 # check for commands
